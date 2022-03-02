@@ -33,13 +33,19 @@
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4j-ho-ACX">
-                                <rect key="frame" x="157" y="782.5" width="100" height="39.5"/>
+                                <rect key="frame" x="157" y="762" width="100" height="60"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="CTM-rn-xrX"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="START">
-                                    <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="21"/>
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="PressSwitchButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="jcD-nc-3re"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -60,6 +66,12 @@
                             <constraint firstItem="Z4j-ho-ACX" firstAttribute="width" secondItem="xM9-bp-QOU" secondAttribute="width" id="z37-ub-xVu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="switchButton" destination="Z4j-ho-ACX" id="vmy-ey-sbh"/>
+                        <outletCollection property="indicatorViews" destination="AND-wg-zKB" collectionClass="NSMutableArray" id="i9a-zZ-v2W"/>
+                        <outletCollection property="indicatorViews" destination="xef-2H-6sX" collectionClass="NSMutableArray" id="HjQ-2y-a0x"/>
+                        <outletCollection property="indicatorViews" destination="xM9-bp-QOU" collectionClass="NSMutableArray" id="gAi-sq-4q2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
