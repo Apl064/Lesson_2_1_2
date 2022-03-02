@@ -27,18 +27,41 @@ class ViewController: UIViewController {
     
     @IBAction func PressSwitchButton() {
         switchButton.setTitle("NEXT", for: .normal)
-
-        var oldValue: Int
         
-        if clickCount <= 2 {
-            print(clickCount)
-            clickCount += 1
-        } else {
-            clickCount = 0
-            print(clickCount)
-            clickCount += 1
-            //print("new round")
+        for indicatorView in indicatorViews {
+            indicatorView.alpha = 0.3
         }
+        
+        clickCount += 1
+        
+        if clickCount % indicatorViews.count == 0 {
+            indicatorViews[clickCount-1].alpha = 1
+            clickCount = 0
+        } else {
+            indicatorViews[clickCount-1].alpha = 1
+        }
+        
+//        clickCount += 1
+//
+//        if clickCount % indicatorViews.count == 0 {
+//            indicatorViews[clickCount-2].alpha = 0.3
+//            indicatorViews[clickCount-1].alpha = 1
+//            clickCount = 0
+//        } else {
+//            indicatorViews[clickCount != 1 ? clickCount-2 : clickCount + 1].alpha = 0.3
+//            indicatorViews[clickCount-1].alpha = 1
+//        }
+        
+//        if (clickCount + 1) % indicatorViews.count == 0 {
+//            indicatorViews[clickCount-1].alpha = 0.3
+//            indicatorViews[clickCount].alpha = 1
+//            clickCount = 0
+//        } else {
+//            indicatorViews[clickCount-1 < 0 ? 0 : clickCount-1].alpha = 0.3
+//            indicatorViews[clickCount].alpha = 1
+//            clickCount += 1
+//        }
+//        print(clickCount)
         
 //        switch clickCount {
 //        case 0:
@@ -53,12 +76,8 @@ class ViewController: UIViewController {
 //            indicatorViews[clickCount].alpha = 1
 //            indicatorViews[clickCount-1].alpha = 0.3
 //            clickCount = 0
-//        default:
-//            for indicatorView in indicatorViews {
-//                indicatorView.alpha = 0.3
+//        default: break
 //            }
-//        }
-    }
-    
+        }
 }
 
