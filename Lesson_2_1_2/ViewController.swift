@@ -28,29 +28,29 @@ class ViewController: UIViewController {
     @IBAction func PressSwitchButton() {
         switchButton.setTitle("NEXT", for: .normal)
         
-        for indicatorView in indicatorViews {
-            indicatorView.alpha = 0.3
-        }
-        
-        clickCount += 1
-        
-        if clickCount % indicatorViews.count == 0 {
-            indicatorViews[clickCount-1].alpha = 1
-            clickCount = 0
-        } else {
-            indicatorViews[clickCount-1].alpha = 1
-        }
-        
+//        for indicatorView in indicatorViews {
+//            indicatorView.alpha = 0.3
+//        }
+//
 //        clickCount += 1
 //
 //        if clickCount % indicatorViews.count == 0 {
-//            indicatorViews[clickCount-2].alpha = 0.3
 //            indicatorViews[clickCount-1].alpha = 1
 //            clickCount = 0
 //        } else {
-//            indicatorViews[clickCount != 1 ? clickCount-2 : clickCount + 1].alpha = 0.3
 //            indicatorViews[clickCount-1].alpha = 1
 //        }
+        
+        clickCount += 1
+
+        if clickCount % indicatorViews.count == 0 {
+            indicatorViews[clickCount-2].alpha = 0.3
+            indicatorViews[clickCount-1].alpha = 1
+            clickCount = 0
+        } else {
+            indicatorViews[clickCount != 1 ? clickCount-2 : clickCount + 1].alpha = 0.3
+            indicatorViews[clickCount-1].alpha = 1
+        }
         
 //        if (clickCount + 1) % indicatorViews.count == 0 {
 //            indicatorViews[clickCount-1].alpha = 0.3
