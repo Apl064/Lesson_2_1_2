@@ -41,43 +41,32 @@ class ViewController: UIViewController {
 //            indicatorViews[clickCount-1].alpha = 1
 //        }
         
-        clickCount += 1
-
-        if clickCount % indicatorViews.count == 0 {
-            indicatorViews[clickCount-2].alpha = 0.3
-            indicatorViews[clickCount-1].alpha = 1
-            clickCount = 0
-        } else {
-            indicatorViews[clickCount != 1 ? clickCount-2 : clickCount + 1].alpha = 0.3
-            indicatorViews[clickCount-1].alpha = 1
-        }
-        
-//        if (clickCount + 1) % indicatorViews.count == 0 {
-//            indicatorViews[clickCount-1].alpha = 0.3
-//            indicatorViews[clickCount].alpha = 1
+//        clickCount += 1
+//
+//        if clickCount % indicatorViews.count == 0 {
+//            indicatorViews[clickCount-2].alpha = 0.3
+//            indicatorViews[clickCount-1].alpha = 1
 //            clickCount = 0
 //        } else {
-//            indicatorViews[clickCount-1 < 0 ? 0 : clickCount-1].alpha = 0.3
-//            indicatorViews[clickCount].alpha = 1
-//            clickCount += 1
+//            indicatorViews[clickCount != 1 ? clickCount-2 : clickCount + 1].alpha = 0.3
+//            indicatorViews[clickCount-1].alpha = 1
 //        }
-//        print(clickCount)
         
-//        switch clickCount {
-//        case 0:
-//            indicatorViews[clickCount].alpha = 1
-//            indicatorViews[clickCount+2].alpha = 0.3
-//            clickCount +=  1
-//        case 1:
-//            indicatorViews[clickCount].alpha = 1
-//            indicatorViews[clickCount-1].alpha = 0.3
-//            clickCount +=  1
-//        case 2:
-//            indicatorViews[clickCount].alpha = 1
-//            indicatorViews[clickCount-1].alpha = 0.3
-//            clickCount = 0
-//        default: break
-//            }
+        switch clickCount {
+        case 0:
+            indicatorViews[clickCount].alpha = 1
+            indicatorViews[clickCount+2].alpha = 0.3
+            clickCount +=  1
+        case 1:
+            indicatorViews[clickCount].alpha = 1
+            indicatorViews[clickCount-1].alpha = 0.3
+            clickCount +=  1
+        case 2:
+            indicatorViews[clickCount].alpha = 1
+            indicatorViews[clickCount-1].alpha = 0.3
+            clickCount = 0
+        default: break
+            }
         }
 }
 
