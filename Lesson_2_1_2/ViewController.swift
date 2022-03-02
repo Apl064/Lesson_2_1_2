@@ -28,24 +28,36 @@ class ViewController: UIViewController {
     @IBAction func PressSwitchButton() {
         switchButton.setTitle("NEXT", for: .normal)
 
-        switch clickCount {
-        case 0:
-            indicatorViews[clickCount].alpha = 1
-            indicatorViews[clickCount+2].alpha = 0.3
-            clickCount +=  1
-        case 1:
-            indicatorViews[clickCount].alpha = 1
-            indicatorViews[clickCount-1].alpha = 0.3
-            clickCount +=  1
-        case 2:
-            indicatorViews[clickCount].alpha = 1
-            indicatorViews[clickCount-1].alpha = 0.3
+        var oldValue: Int
+        
+        if clickCount <= 2 {
+            print(clickCount)
+            clickCount += 1
+        } else {
             clickCount = 0
-        default:
-            for indicatorView in indicatorViews {
-                indicatorView.alpha = 0.3
-            }
+            print(clickCount)
+            clickCount += 1
+            //print("new round")
         }
+        
+//        switch clickCount {
+//        case 0:
+//            indicatorViews[clickCount].alpha = 1
+//            indicatorViews[clickCount+2].alpha = 0.3
+//            clickCount +=  1
+//        case 1:
+//            indicatorViews[clickCount].alpha = 1
+//            indicatorViews[clickCount-1].alpha = 0.3
+//            clickCount +=  1
+//        case 2:
+//            indicatorViews[clickCount].alpha = 1
+//            indicatorViews[clickCount-1].alpha = 0.3
+//            clickCount = 0
+//        default:
+//            for indicatorView in indicatorViews {
+//                indicatorView.alpha = 0.3
+//            }
+//        }
     }
     
 }
